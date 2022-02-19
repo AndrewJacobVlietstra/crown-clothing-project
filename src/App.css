@@ -1,11 +1,36 @@
 body {
-  font-family: 'Open Sans Condensed', sans-serif;
-  padding: 20px 60px;
-  background: linear-gradient(0, #333, #222);
   color: white;
+  font-family: "Open Sans Condensed", sans-serif;
+  padding: 20px 60px;
+
+  height: 100%;
+  background: linear-gradient(0, #222, #3b3b3b);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 a {
   color: white;
   text-decoration: none;
+}
+
+/* Scroll Bar Styling */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
