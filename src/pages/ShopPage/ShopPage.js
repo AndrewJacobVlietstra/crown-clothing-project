@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import './ShopPage.styles.scss';
+
 import CollectionPreview from "../../components/CollectionPreview/CollectionPreview";
 import SHOP_DATA from "./ShopPageData";
 

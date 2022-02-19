@@ -1,4 +1,11 @@
 body {
   font-family: 'Open Sans Condensed', sans-serif;
   padding: 20px 60px;
+  background: linear-gradient(0, #333, #222);
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
