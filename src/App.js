@@ -3,6 +3,8 @@ import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import HatsPage from "./pages/HatsPage/HatsPage";
 import ShopPage from "./pages/ShopPage/ShopPage";
+import SignInSignUpPage from "./pages/SignInSignUpPage/SignInSignUpPage";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -12,7 +14,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<ShopPage />} />
-        <Route path="/shop/hats" element={<HatsPage />} />
+        {/* <Route path="/shop/hats" element={<HatsPage />} /> */}
+        <Route path="/signIn" element={<SignInSignUpPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
   );
