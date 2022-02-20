@@ -34,3 +34,8 @@ a {
 ::-webkit-scrollbar-thumb:hover {
   background: #000;
 }
+
+::selection {
+  background-color: black;
+  color: lightgray;
+}

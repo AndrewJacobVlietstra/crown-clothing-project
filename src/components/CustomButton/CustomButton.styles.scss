@@ -1,0 +1,29 @@
+.custom-button {
+  min-width: 165px;
+  width: auto;
+  height: 50px;
+  letter-spacing: 0.5px;
+  padding: 0 35px 0px 35px;
+  font-size: 15px;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: all .25s;
+
+  &:hover {
+    transform: translateY(-4px);
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    box-shadow: 0.5rem 0.5rem 1rem black;
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0.22rem 0.22rem .65rem black;
+  }
+}

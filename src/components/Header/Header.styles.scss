@@ -26,6 +26,13 @@
       font-size: 20px;
       font-weight: normal;
       padding: 10px 15px;
+      margin: 0 5px 0 5px;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom .25s;
+    }
+
+    .selected {
+      border-bottom: 1px solid white;
     }
   }
 }
