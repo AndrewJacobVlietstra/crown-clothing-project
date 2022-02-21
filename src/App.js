@@ -8,7 +8,7 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import { Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import PathNameContext from "./context/PathNameContext";
-import { authentication } from './firebase/firebase.utils';
+import { authentication } from "./firebase/firebase.utils";
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -17,14 +17,13 @@ function App() {
   let unsubscribeFromAuth = null;
 
   useEffect(() => {
-    unsubscribeFromAuth = authentication.onAuthStateChanged(user => {
+    unsubscribeFromAuth = authentication.onAuthStateChanged((user) => {
       setCurrentUser(user);
-      console.log(user);
-    })
+    });
 
     return () => {
       unsubscribeFromAuth();
-    } 
+    };
   }, []);
 
   function handlePathChange() {
@@ -33,7 +32,7 @@ function App() {
         setCurrentPath(window.location.pathname);
       }, 0);
     };
-  };
+  }
 
   return (
     <>
@@ -44,14 +43,16 @@ function App() {
         }}
       >
         <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/shop" element={<ShopPage />} />
-          {/* <Route path="/contact" element={<ContactPage />} /> */}
-          <Route path="/signIn" element={<SignInSignUpPage />} />
-          <Route path="/shop/hats" element={<HatsPage />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
+        <div className="current-page">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/shop" element={<ShopPage />} />
+            {/* <Route path="/contact" element={<ContactPage />} /> */}
+            <Route path="/signIn" element={<SignInSignUpPage />} />
+            <Route path="/shop/hats" element={<HatsPage />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </div>
       </PathNameContext.Provider>
     </>
   );
