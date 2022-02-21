@@ -6,11 +6,26 @@ import ShopPage from "./pages/ShopPage/ShopPage";
 import SignInSignUpPage from "./pages/SignInSignUpPage/SignInSignUpPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import { Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PathNameContext from "./context/PathNameContext";
+import { authentication } from './firebase/firebase.utils';
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const [currentUser, setCurrentUser] = useState(null);
+
+  let unsubscribeFromAuth = null;
+
+  useEffect(() => {
+    unsubscribeFromAuth = authentication.onAuthStateChanged(user => {
+      setCurrentUser(user);
+      console.log(user);
+    })
+
+    return () => {
+      unsubscribeFromAuth();
+    } 
+  }, []);
 
   function handlePathChange() {
     return () => {
@@ -18,10 +33,10 @@ function App() {
         setCurrentPath(window.location.pathname);
       }, 0);
     };
-  }
+  };
 
   return (
-    <div>
+    <>
       <PathNameContext.Provider
         value={{
           currentPath: currentPath,
@@ -38,7 +53,7 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </PathNameContext.Provider>
-    </div>
+    </>
   );
 }
 

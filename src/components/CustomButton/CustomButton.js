@@ -1,12 +1,16 @@
-import React from 'react';
-import './CustomButton.styles.scss';
+import React from "react";
+import "./CustomButton.styles.scss";
 
-const CustomButton = ({ children, ...otherProps }) => {
+const CustomButton = ({ children, btnColor, ...otherProps }) => {
   return (
-    <button className='custom-button' {...otherProps}>
+    <button
+      className="custom-button"
+      style={{ backgroundColor: btnColor }}
+      {...otherProps}
+    >
       {children}
     </button>
-  )
-}
+  );
+};
 
 export default CustomButton;

@@ -5,7 +5,7 @@ import { useContext } from "react";
 import PathNameContext from "../../context/PathNameContext";
 
 const MenuItem = ({ title, imageUrl, size, linkUrl }) => {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   const pathContext = useContext(PathNameContext);
 
   return (

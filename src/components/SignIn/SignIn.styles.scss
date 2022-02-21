@@ -6,4 +6,9 @@
   .title {
     margin: 22px 0;
   }
+
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+  }
 }
