@@ -31,7 +31,7 @@ const config = {
 };
 
 // Initialize application with config settings
-const firebaseApp = initializeApp(config);
+export const firebaseApp = initializeApp(config);
 
 // Create an instance of authentication object using our firebaseApp
 export const authentication = getAuth(firebaseApp);

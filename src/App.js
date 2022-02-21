@@ -37,9 +37,7 @@ function App() {
 
     });
 
-    return () => {
-      unsubscribeFromAuth();
-    };
+    return () => unsubscribeFromAuth();
   }, []);
 
   function handlePathChange() {
@@ -64,7 +62,7 @@ function App() {
             <Route path="/" element={<HomePage user={currentUser} />} />
             <Route path="/shop" element={<ShopPage />} />
             {/* <Route path="/contact" element={<ContactPage />} /> */}
-            <Route path="/signIn" element={<SignInSignUpPage />} />
+            <Route path="/signIn" element={<SignInSignUpPage setCurrentUser={setCurrentUser} />} />
             <Route path="/shop/hats" element={<HatsPage />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>

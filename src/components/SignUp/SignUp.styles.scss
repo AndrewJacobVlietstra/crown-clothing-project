@@ -1,0 +1,23 @@
+.sign-up {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    margin: 22px 0;
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sign-up-form {
+    position: relative;
+
+    & .error-message {
+      font-size: 20px;
+      color: salmon;
+    }
+  }
+}
