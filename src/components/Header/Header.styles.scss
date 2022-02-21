@@ -1,9 +1,6 @@
 .header {
-  position: absolute;
-  top: 2%;
-  left: 4%;
   height: 70px;
-  width: 91%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,7 +10,7 @@
     display: flex;
     align-items: center;
     height: 100%;
-    width: 70px;
+    width: 100px;
     padding: 25px;
 
     .logo {
@@ -36,6 +33,7 @@
       margin: 0 5px 0 5px;
       border-bottom: 1px solid transparent;
       transition: border-bottom .25s;
+      cursor: pointer;
 
       &:hover {
         border-bottom: 1px solid white;

@@ -7,18 +7,34 @@ import SignInSignUpPage from "./pages/SignInSignUpPage/SignInSignUpPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import { Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PathNameContext from "./context/PathNameContext";
-import { authentication } from "./firebase/firebase.utils";
+import { authentication, createUserProfileDocument } from "./firebase/firebase.utils";
+import { getDoc } from "firebase/firestore";
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
   const [currentUser, setCurrentUser] = useState(null);
 
+  const navigate = useNavigate();
+
   let unsubscribeFromAuth = null;
 
   useEffect(() => {
-    unsubscribeFromAuth = authentication.onAuthStateChanged((user) => {
-      setCurrentUser(user);
+    unsubscribeFromAuth = authentication.onAuthStateChanged(async userAuth => {
+      // console.log(userAuth);
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+        const userSnapshot = await getDoc(userRef).then(snapshot => snapshot.data());
+        const user = {id: userAuth.uid, ...userSnapshot};
+        setCurrentUser(user);
+        // console.log(currentUser);
+
+        navigate('/');
+        setCurrentPath(window.location.pathname);
+      }
+      if (!userAuth) return setCurrentUser(userAuth);
+
     });
 
     return () => {
@@ -42,10 +58,10 @@ function App() {
           handlePathChange: handlePathChange,
         }}
       >
-        <Header />
+        <Header user={currentUser} />
         <div className="current-page">
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<HomePage user={currentUser} />} />
             <Route path="/shop" element={<ShopPage />} />
             {/* <Route path="/contact" element={<ContactPage />} /> */}
             <Route path="/signIn" element={<SignInSignUpPage />} />

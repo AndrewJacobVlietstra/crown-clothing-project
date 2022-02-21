@@ -1,7 +1,13 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   color: white;
   font-family: "Open Sans Condensed", sans-serif;
-  padding: 20px 20px;
+  padding: 20px 40px;
 
   height: 100%;
   background: linear-gradient(0, #222, #3b3b3b);
@@ -13,10 +19,6 @@ body {
 a {
   color: white;
   text-decoration: none;
-}
-
-.current-page {
-  margin-top: 5rem;
 }
 
 /* Scroll Bar Styling */
