@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import "./Header.styles.scss";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import PathNameContext from "../../context/PathNameContext";
 import { authentication } from "../../firebase/firebase.utils";
 
-const Header = ({ user }) => {
+const Header = ({ currentUser }) => {
   const pathContext = useContext(PathNameContext);
 
   return (
@@ -41,7 +42,7 @@ const Header = ({ user }) => {
         >
           CONTACT
         </Link>
-        {user ? (
+        {currentUser ? (
           <a className="option" onClick={() => authentication.signOut()}>
             SIGN OUT
           </a>
@@ -60,5 +61,8 @@ const Header = ({ user }) => {
     </div>
   );
 };
+const mapStateToProps = state => ({
+  currentUser: state.user.currentUser
+})
 
-export default Header;
+export default connect(mapStateToProps)(Header);
