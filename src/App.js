@@ -30,8 +30,10 @@ function App() {
         setCurrentUser(user);
         // console.log(currentUser);
 
-        navigate('/');
-        setCurrentPath(window.location.pathname);
+        if (window.location.pathname === '/signIn') {
+          navigate('/');
+          setCurrentPath(window.location.pathname);
+        }
       }
       if (!userAuth) return setCurrentUser(userAuth);
 
