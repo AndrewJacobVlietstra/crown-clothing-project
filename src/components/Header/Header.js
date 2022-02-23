@@ -61,6 +61,8 @@ const Header = ({ currentUser }) => {
     </div>
   );
 };
+
+// This function grabs the "state" of the redux store and maps whatever properties you want to the props of this component
 const mapStateToProps = state => ({
   currentUser: state.user.currentUser
 })

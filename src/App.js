@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import PathNameContext from "./context/PathNameContext";
 import { authentication, createUserProfileDocument } from "./firebase/firebase.utils";
 import { getDoc } from "firebase/firestore";
-import { setUser } from "./redux/user/User.actions";
+import { setUserAction } from "./redux/user/User.actions";
 import { connect } from "react-redux";
 
 function App({ setUser }) {
@@ -78,8 +78,12 @@ function App({ setUser }) {
   );
 }
 
+// This function makes setUser a prop of this component's props
+// setUser will be a function that returns a dispatch method with setUser action passed in, as well as user data as the payload
 const mapDispatchToProps = dispatch => ({
-  setUser: user => dispatch(setUser(user)),
+  setUser: user => dispatch(setUserAction(user)),
 });
 
+// Connect returns your component but connected to the redux store, and you can pass in functions to
+// map state of the store to the props of this component, or map a dispatch to the props if you need to update the state within the store
 export default connect(null, mapDispatchToProps)(App);
