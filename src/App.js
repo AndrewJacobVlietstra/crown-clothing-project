@@ -36,7 +36,7 @@ function App({ setUser }) {
 
         if (window.location.pathname === '/signIn') {
           navigate('/');
-          setCurrentPath(window.location.pathname);
+          handlePathChange();
         }
       }
       if (!userAuth) return setUser(userAuth);
@@ -46,13 +46,9 @@ function App({ setUser }) {
     return () => unsubscribeFromAuth();
   }, []);
 
-  function handlePathChange() {
-    return () => {
-      setTimeout(() => {
-        setCurrentPath(window.location.pathname);
-      }, 0);
-    };
-  }
+  const handlePathChange = () => {
+    setCurrentPath(window.location.pathname);
+  };
 
   return (
     <>
