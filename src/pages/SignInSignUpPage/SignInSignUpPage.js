@@ -3,11 +3,11 @@ import "./SignInSignUpPage.styles.scss";
 import SignIn from "../../components/SignIn/SignIn";
 import SignUp from "../../components/SignUp/SignUp";
 
-const SignInSignUpPage = ({setCurrentUser}) => {
+const SignInSignUpPage = () => {
   return (
     <div className="sign-in-and-sign-up-page">
       <SignIn />
-      <SignUp setCurrentUser={setCurrentUser} />
+      <SignUp />
     </div>
   );
 };

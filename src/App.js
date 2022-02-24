@@ -68,7 +68,7 @@ function App({ setUser }) {
             <Route path="/" element={<HomePage />} />
             <Route path="/shop" element={<ShopPage />} />
             {/* <Route path="/contact" element={<ContactPage />} /> */}
-            <Route path="/signIn" element={<SignInSignUpPage setCurrentUser={setCurrentUser} />} />
+            <Route path="/signIn" element={<SignInSignUpPage />} />
             <Route path="/shop/hats" element={<HatsPage />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
@@ -85,5 +85,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 // Connect returns your component but connected to the redux store, and you can pass in functions to
-// map state of the store to the props of this component, or map a dispatch to the props if you need to update the state within the store
+// map state of the store to the props of this component if it needs access to a piece of state, 
+// or map a dispatch in props if you need to update the state within the store from this component
 export default connect(null, mapDispatchToProps)(App);
