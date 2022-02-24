@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Header.styles.scss";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -6,8 +6,9 @@ import { ReactComponent as Logo } from "../../assets/crown.svg";
 import PathNameContext from "../../context/PathNameContext";
 import { authentication } from "../../firebase/firebase.utils";
 import CartIcon from "../CartIcon/CartIcon";
+import CartDropdown from "../CartDropdown/CartDropdown";
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, cartDropdownShowing }) => {
   const pathContext = useContext(PathNameContext);
 
   return (
@@ -60,13 +61,15 @@ const Header = ({ currentUser }) => {
         )}
         <CartIcon />
       </div>
+      {cartDropdownShowing ? null : <CartDropdown />}
     </div>
   );
 };
 
 // This function grabs the "state" of the redux store and maps whatever properties you want to the props of this component
-const mapStateToProps = state => ({
-  currentUser: state.user.currentUser
+const mapStateToProps = ({user, cart}) => ({
+  currentUser: user.currentUser,
+  cartDropdownShowing: cart.hidden
 })
 
 export default connect(mapStateToProps)(Header);

@@ -15,7 +15,7 @@ import { setUserAction } from "./redux/user/User.actions";
 import { connect } from "react-redux";
 
 function App({ setUser }) {
-  const [currentUser, setCurrentUser] = useState(null);
+  // const [currentUser, setCurrentUser] = useState(null);
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
   const navigate = useNavigate();
@@ -40,7 +40,6 @@ function App({ setUser }) {
         }
       }
       if (!userAuth) return setUser(userAuth);
-
     });
 
     return () => unsubscribeFromAuth();
