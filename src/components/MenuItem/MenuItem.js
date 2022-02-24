@@ -1,11 +1,10 @@
 import React from "react";
 import "./MenuItem.styles.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 import PathNameContext from "../../context/PathNameContext";
 
 const MenuItem = ({ title, imageUrl, size, linkUrl }) => {
-  // let navigate = useNavigate();
   const pathContext = useContext(PathNameContext);
 
   return (
