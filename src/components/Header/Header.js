@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import PathNameContext from "../../context/PathNameContext";
 import { authentication } from "../../firebase/firebase.utils";
+import CartIcon from "../CartIcon/CartIcon";
 
 const Header = ({ currentUser }) => {
   const pathContext = useContext(PathNameContext);
@@ -57,6 +58,7 @@ const Header = ({ currentUser }) => {
             SIGN IN
           </Link>
         )}
+        <CartIcon />
       </div>
     </div>
   );
