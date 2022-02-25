@@ -22,7 +22,7 @@ function App({ setUser, setPath }) {
   const navigate = useNavigate();
   let unsubscribeFromAuth = null;
 
-  // Any time auth state changes send a dispatch to update currentUser in the store
+  // Any time auth state changes dispatch setUser action to update currentUser in the store
   useEffect(() => {
     unsubscribeFromAuth = authentication.onAuthStateChanged(
       async (userAuth) => {
@@ -49,7 +49,7 @@ function App({ setUser, setPath }) {
     return () => unsubscribeFromAuth();
   }, []);
 
-  // Any time the window path changes, send a dispatch to the reducer to update current path in the store
+  // Any time the window path changes, dispatch pathChange action to the reducer to update current path in the store
   useEffect(() => {
     setPath();
   }, [window.location.pathname]);

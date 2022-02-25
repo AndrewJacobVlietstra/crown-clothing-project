@@ -1,5 +1,5 @@
 export const addItemToCartUtility = (cartItems, cartItemToAdd) => {
-  // Try and find if the item being added already exists in the cart
+  // Try and find if the item being added already exists in the cart, if not, the find method returns undefined, skipping the if statement below
   const existingCartItem = cartItems.find(
     (cartItem) => cartItem.id === cartItemToAdd.id
   );
