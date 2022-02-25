@@ -5,10 +5,11 @@ import { useContext } from "react";
 import PathNameContext from "../../context/PathNameContext";
 
 const MenuItem = ({ title, imageUrl, size, linkUrl }) => {
-  const pathContext = useContext(PathNameContext);
-
   return (
-    <Link to={linkUrl} className={size ? `${size} menu-item` : 'menu-item'} onClick={pathContext.handlePathChange}>
+    <Link 
+      to={linkUrl} 
+      className={size ? `${size} menu-item` : 'menu-item'} 
+    >
       <div className="background-image" style={{ backgroundImage: `url(${imageUrl})` }} />
       <div className="content">
         <h1 className="title">{title}</h1>

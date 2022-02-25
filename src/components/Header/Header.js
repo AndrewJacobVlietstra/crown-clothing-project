@@ -1,16 +1,13 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import "./Header.styles.scss";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
-import PathNameContext from "../../context/PathNameContext";
 import { authentication } from "../../firebase/firebase.utils";
 import CartIcon from "../CartIcon/CartIcon";
 import CartDropdown from "../CartDropdown/CartDropdown";
 
-const Header = ({ currentUser, cartDropdownShowing }) => {
-  const pathContext = useContext(PathNameContext);
-
+const Header = ({ currentUser, cartDropdownHidden, currentPath }) => {
   return (
     <div className="header">
       <Link to="/" className="logo-container" title="Home">
@@ -20,27 +17,24 @@ const Header = ({ currentUser, cartDropdownShowing }) => {
         <Link
           to="/"
           className={`${
-            pathContext.currentPath === "/" ? "selected" : ""
+            currentPath === "/" ? "selected" : ""
           } option`}
-          onClick={pathContext.handlePathChange()}
         >
           HOME
         </Link>
         <Link
           to="/shop"
           className={`${
-            pathContext.currentPath === "/shop" ? "selected" : ""
+            currentPath === "/shop" ? "selected" : ""
           } option`}
-          onClick={pathContext.handlePathChange()}
         >
           SHOP
         </Link>
         <Link
           to="/contact"
           className={`${
-            pathContext.currentPath === "/contact" ? "selected" : ""
+            currentPath === "/contact" ? "selected" : ""
           } option`}
-          onClick={pathContext.handlePathChange()}
         >
           CONTACT
         </Link>
@@ -52,24 +46,24 @@ const Header = ({ currentUser, cartDropdownShowing }) => {
           <Link
             to="/signIn"
             className={`${
-              pathContext.currentPath === "/signIn" ? "selected" : ""
+              currentPath === "/signIn" ? "selected" : ""
             } option`}
-            onClick={pathContext.handlePathChange()}
           >
             SIGN IN
           </Link>
         )}
         <CartIcon />
       </div>
-      {cartDropdownShowing ? null : <CartDropdown />}
+      {cartDropdownHidden ? null : <CartDropdown />}
     </div>
   );
 };
 
 // This function grabs the "state" of the redux store and maps whatever properties you want to the props of this component
-const mapStateToProps = ({user, cart}) => ({
+const mapStateToProps = ({ user, cart, path }) => ({
   currentUser: user.currentUser,
-  cartDropdownShowing: cart.hidden
-})
+  cartDropdownHidden: cart.hidden,
+  currentPath: path.currentPath
+});
 
 export default connect(mapStateToProps)(Header);
