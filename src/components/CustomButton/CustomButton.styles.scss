@@ -1,4 +1,7 @@
 .custom-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 165px;
   width: auto;
   height: 50px;
@@ -16,14 +19,38 @@
 
   &:hover {
     transform: translateY(-4px);
-    background-color: white !important;
+    background-color: white;
     border: 1px solid black;
-    color: black !important;
+    color: black;
     box-shadow: 0.5rem 0.5rem 1rem black;
   }
 
   &:active {
     transform: translateY(-1px);
     box-shadow: 0.22rem 0.22rem .65rem black;
+  }
+
+  &.google {
+    background-color: #0990DF;
+    border: 1px solid white;
+    color: white;
+
+    &:hover {
+      background-color: white;
+      border: 1px solid black;
+      color: black;
+    }
+  }
+
+  &.inverted {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+
+    &:hover {
+      background-color: black;
+      border: 1px solid white;
+      color: white;
+    }
   }
 }

@@ -58,8 +58,8 @@ class SignIn extends Component {
           />
 
           <div className="buttons-container">
-            <CustomButton type="submit" btnColor='black'>Sign in</CustomButton>
-            <CustomButton onClick={signInWithGoogle} btnColor='#0990DF' type='button'>Sign in with Google</CustomButton>
+            <CustomButton type="submit">Sign in</CustomButton>
+            <CustomButton onClick={signInWithGoogle} google type='button'>Sign in with Google</CustomButton>
           </div>
         </form>
       </div>
