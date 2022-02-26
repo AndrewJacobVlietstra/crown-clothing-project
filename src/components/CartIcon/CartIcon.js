@@ -3,26 +3,20 @@ import './CartIcon.styles.scss';
 import { ReactComponent as ShoppingIcon } from '../../assets/shopping-bag.svg';
 import { connect } from 'react-redux';
 import { toggleCartDropdownAction } from '../../redux/cart/cart.actions';
+import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
 
 const CartIcon = ({ cartItems, toggleCartDropdown }) => {
-  // Use a array reduce method on all cart items to calculate the total quantity of items in the cart
-  // The total amount will be recalculated any time the cartItems change
-  const totalCartItems = cartItems.reduce((previousValue, currentValue) => {
-    return previousValue + currentValue.quantity;
-  }, 0);
-
-  console.log(totalCartItems);
 
   return (
     <div className='cart-icon' onClick={toggleCartDropdown}>
       <ShoppingIcon className='shopping-icon' />
-      <span className='item-count'>{totalCartItems}</span>
+      <span className='item-count'>{cartItems}</span>
     </div>
   )
 }
 
-const mapStateToProps = ({ cart }) => ({
-  cartItems: cart.cartItems
+const mapStateToProps = (state) => ({
+  cartItems: selectCartItemsCount(state)
 });
 
 const mapDispatchToProps = dispatch => ({
