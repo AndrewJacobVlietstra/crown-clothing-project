@@ -13,13 +13,13 @@ const CartItem = ({ item, removeItem, addItem }) => {
       <img src={imageUrl} alt="item" />
       <div className="item-details">
         <span className="name">{name}</span>
-        <span className="price">
-          {quantity} x {`$${price}`}{" "}
+        <span className="price">{quantity} x {`$${price}`}</span>
+        <span className="item-button-container">
           <button className="item-button" onClick={() => removeItem(item)}>
-            -1
+            -
           </button>{" "}
           <button className="item-button" onClick={() => addItem(item)}>
-            +1
+            +
           </button>
         </span>
       </div>

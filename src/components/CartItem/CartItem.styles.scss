@@ -9,10 +9,10 @@
   }
 
   .item-details {
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     padding: 10px 20px;
 
@@ -21,13 +21,13 @@
       color: black;
       font-size: 16px;
 
-      .item-button {
-        background-color: #333;
-        border: none;
-        padding: 2px 4px;
-        color: white;
-        cursor: pointer;
-      }
+    }
+    .item-button {
+      background-color: #333;
+      border: none;
+      padding: 2px 5px;
+      color: white;
+      cursor: pointer;
     }
   }
 }
