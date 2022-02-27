@@ -3,10 +3,10 @@ import "./CartItem.styles.scss";
 import { connect } from "react-redux";
 import {
   addItemToCartAction,
-  removeItemFromCartAction,
+  decrementItemQuantityAction,
 } from "../../redux/cart/cart.actions";
 
-const CartItem = ({ item, removeItem, addItem }) => {
+const CartItem = ({ item, decrementItem, addItem }) => {
   const { imageUrl, price, name, quantity } = item;
   return (
     <div className="cart-item">
@@ -15,7 +15,7 @@ const CartItem = ({ item, removeItem, addItem }) => {
         <span className="name">{name}</span>
         <span className="price">{quantity} x {`$${price}`}</span>
         <span className="item-button-container">
-          <button className="item-button" onClick={() => removeItem(item)}>
+          <button className="item-button" onClick={() => decrementItem(item)}>
             -
           </button>{" "}
           <button className="item-button" onClick={() => addItem(item)}>
@@ -28,7 +28,7 @@ const CartItem = ({ item, removeItem, addItem }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  removeItem: (item) => dispatch(removeItemFromCartAction(item)),
+  decrementItem: (item) => dispatch(decrementItemQuantityAction(item)),
   addItem: (item) => dispatch(addItemToCartAction(item)),
 });
 

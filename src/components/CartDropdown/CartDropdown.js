@@ -3,8 +3,7 @@ import "./CartDropdown.styles.scss";
 import CartItem from "../CartItem/CartItem";
 import CustomButton from "../CustomButton/CustomButton";
 import { connect } from "react-redux";
-import { cartItemsSelector } from "../../redux/cart/cart.selectors";
-import { cartTotalPriceSelector } from "../../redux/cart/cart.selectors";
+import { cartItemsSelector, cartTotalPriceSelector } from "../../redux/cart/cart.selectors";
 import { toggleCartDropdownAction } from "../../redux/cart/cart.actions";
 import { useNavigate } from "react-router-dom";
 

@@ -1,9 +1,13 @@
 import CartActionTypes from "./cart.action.types";
-import { addItemToCartUtility, removeItemFromCartUtility } from "./cart.utils";
+import {
+  addItemToCartUtility,
+  removeItemFromCartUtility,
+  decrementItemQuantityUtility,
+} from "./cart.utils";
 
 const INITIAL_STATE = {
   hidden: true,
-  cartItems: []
+  cartItems: [],
 };
 
 const cartReducer = (state = INITIAL_STATE, action) => {
@@ -11,22 +15,27 @@ const cartReducer = (state = INITIAL_STATE, action) => {
     case CartActionTypes.TOGGLE_CART_DROPDOWN:
       return {
         ...state,
-        hidden: !state.hidden
+        hidden: !state.hidden,
       };
     case CartActionTypes.CART_ADD_ITEM:
       return {
         ...state,
-        cartItems: addItemToCartUtility(state.cartItems, action.payload)
-      }
+        cartItems: addItemToCartUtility(state.cartItems, action.payload),
+      };
     case CartActionTypes.CART_REMOVE_ITEM:
       return {
         ...state,
-        cartItems: removeItemFromCartUtility(state.cartItems, action.payload)
-      }
-  
+        cartItems: removeItemFromCartUtility(state.cartItems, action.payload),
+      };
+    case CartActionTypes.CART_DECREMENT_QUANTITY:
+      return {
+        ...state,
+        cartItems: decrementItemQuantityUtility(state.cartItems, action.payload),
+      };
+
     default:
       return state;
   }
-}
+};
 
 export default cartReducer;
