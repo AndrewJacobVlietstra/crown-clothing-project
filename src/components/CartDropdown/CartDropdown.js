@@ -5,10 +5,16 @@ import CustomButton from "../CustomButton/CustomButton";
 import { connect } from "react-redux";
 import { cartItemsSelector } from "../../redux/cart/cart.selectors";
 import { cartTotalPriceSelector } from "../../redux/cart/cart.selectors";
+import { toggleCartDropdownAction } from "../../redux/cart/cart.actions";
 import { useNavigate } from "react-router-dom";
 
-const CartDropdown = ({ cartItems, totalCartPrice }) => {
+const CartDropdown = ({ cartItems, totalCartPrice, toggleCart }) => {
   const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    navigate('/checkout');
+    return toggleCart();
+  }
 
   return (
     <div className="cart-dropdown">
@@ -24,7 +30,7 @@ const CartDropdown = ({ cartItems, totalCartPrice }) => {
       ) : (
         <p className="empty-message">Your cart is currently empty!</p>
       )}
-      {cartItems.length ? <CustomButton onClick={() => navigate('/checkout')}>GO TO CHECKOUT</CustomButton> : null}
+      {cartItems.length ? <CustomButton onClick={handleCheckout}>GO TO CHECKOUT</CustomButton> : null}
     </div>
   );
 };
@@ -34,4 +40,8 @@ const mapStateToProps = (state) => ({
   totalCartPrice: cartTotalPriceSelector(state)
 });
 
-export default connect(mapStateToProps)(CartDropdown);
+const mapDispatchToProps = (dispatch) => ({
+  toggleCart: () => dispatch(toggleCartDropdownAction())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartDropdown);
