@@ -18,3 +18,27 @@ export const addItemToCartUtility = (cartItems, cartItemToAdd) => {
   // If the item doesnt already exist in our cart then we want to add it in but now with a quantity property to track quantity of that item
   return [...cartItems, { ...cartItemToAdd, quantity: 1 }];
 };
+
+export const removeItemFromCartUtility = (cartItems, cartItemToRemove) => {
+  const existingCartItem = cartItems.find(
+    (cartItem) => cartItem.id === cartItemToRemove.id
+  );
+
+  // If the quantity is already 1 and we decrement the item by 1 we dont want it to show in the cart as zero, or worse as negative numbers
+  // so we will filter the cartItems array and only return the items that arent equal to the one we're trying to remove
+  if (existingCartItem.quantity === 1) {
+    return cartItems.filter((item) => item.id !== cartItemToRemove.id)
+  }
+
+  // If the item exists but has quantity higher than 1, just reduce the quantity by 1
+  if (existingCartItem) {
+    return cartItems.map((cartItem) =>
+      cartItem.id === cartItemToRemove.id
+        ? { ...cartItem, quantity: cartItem.quantity - 1 }
+        : cartItem
+    );
+  }
+
+  // If somehow the item does not exist just return all the current cartItems
+  return [...cartItems];
+};

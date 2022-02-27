@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import HatsPage from "./pages/HatsPage/HatsPage";
 import ShopPage from "./pages/ShopPage/ShopPage";
 import SignInSignUpPage from "./pages/SignInSignUpPage/SignInSignUpPage";
+import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import { Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -63,6 +64,7 @@ function App({ setUser, setPath }) {
           <Route path="/shop" element={<ShopPage />} />
           {/* <Route path="/contact" element={<ContactPage />} /> */}
           <Route path="/signIn" element={<SignInSignUpPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/shop/hats" element={<HatsPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
