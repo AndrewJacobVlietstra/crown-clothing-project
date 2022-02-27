@@ -24,12 +24,22 @@
     width: 23%;
   }
   .quantity {
+    display: flex;
     user-select: none;
+
+    .quantity-value {
+      padding: 0 6px;
+      padding-top: 1px;
+    }
 
     .quantity-button {
       cursor: pointer;
-      padding: 2px;
     }
+  }
+
+  .quantity,
+  .price {
+    padding-left: 4px;
   }
 
   .remove-button {

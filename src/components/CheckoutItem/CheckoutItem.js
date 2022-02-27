@@ -15,16 +15,15 @@ const CheckoutItem = ({ item, addItem, decreaseItem, removeItem }) => {
       </div>
       <span className="name">{item.name}</span>
       <span className="quantity">
-        {" "}
         <span className="quantity-button" onClick={() => decreaseItem(item)}>
           &#10094;
-        </span>{" "}
-        {item.quantity}{" "}
+        </span>
+        <span className="quantity-value">{item.quantity}</span>
         <span className="quantity-button" onClick={() => addItem(item)}>
           &#10095;
-        </span>{" "}
+        </span>
       </span>
-      <span className="price">{`$${item.price * item.quantity}`}</span>
+      <span className="price">{`$${item.price}`}</span>
       <div className="remove-button" onClick={() => removeItem(item)}>
         &#10005;
       </div>
