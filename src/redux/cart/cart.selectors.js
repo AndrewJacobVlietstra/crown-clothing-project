@@ -1,14 +1,20 @@
 import { createSelector } from "reselect";
 
-const selectCart = (state) => state.cart;
+const cartSelector = (state) => state.cart;
 
-export const selectCartItems = createSelector(
-  [selectCart],
+export const cartItemsSelector = createSelector(
+  [cartSelector],
   (cart) => cart.cartItems
 );
 
-export const selectCartItemsCount = createSelector(
-  [selectCartItems],
+export const cartDropdownHiddenSelector = createSelector(
+  [cartSelector],
+  (cart) => cart.hidden
+);
+
+export const cartItemsCountSelector = createSelector(
+  [cartItemsSelector], // These are dependencies, the function below will be run only when cartItems changes
+
   // Use a array reduce method on all cart items to calculate the total quantity of items in the cart
   // The total amount will be recalculated any time the cartItems change
   (cartItems) =>
@@ -16,4 +22,11 @@ export const selectCartItemsCount = createSelector(
       (previousValue, currentValue) => previousValue + currentValue.quantity,
       0
     )
+);
+
+export const cartTotalPriceSelector = createSelector(
+  [cartItemsSelector],
+  cartItems => cartItems.reduce((prevTotal, currentItem) => {
+    return prevTotal + (currentItem.quantity * currentItem.price)
+  }, 0)
 );
