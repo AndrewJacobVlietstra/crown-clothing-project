@@ -1,7 +1,16 @@
 import { combineReducers } from "redux";
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage"; // represents localStorage on window object
+
 import userReducer from "./user/User.Reducer";
 import cartReducer from "./cart/cart.reducer";
 import pathReducer from "./path/path.reducer";
+
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['cart'] // state to persist in localStorage
+};
 
 // This object from combineReducers is the state of the redux store
 const rootReducer = combineReducers({
@@ -10,4 +19,4 @@ const rootReducer = combineReducers({
   path: pathReducer,
 })
 
-export default rootReducer;
+export default persistReducer(persistConfig, rootReducer);
