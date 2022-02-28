@@ -14,21 +14,24 @@
     border-bottom: 1px solid gray;
 
     span {
-      cursor: pointer;
-      font-size: 34px;
+      color: #bbb;
+      font-size: 30px;
       font-weight: normal;
       margin: 0 2.5rem;
       padding-bottom: 3px;
       border-bottom: 1px solid transparent;
       transition: all .22s;
       text-transform: uppercase;
+      cursor: pointer;
 
       &:hover {
+        color: #fff;
         border-bottom: 1px solid white;
       }
     }
 
     .selected {
+      color: #fff;
       border-bottom: 1px solid white;
     }
   }
@@ -41,7 +44,7 @@
 
     & .collection-item {
       margin-bottom: 20px;
-      width: 64%;
+      width: 75%;
     }
   }
 }
