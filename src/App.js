@@ -1,15 +1,15 @@
 import "./App.css";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
-import HatsPage from "./pages/HatsPage/HatsPage";
 import ShopPage from "./pages/ShopPage/ShopPage";
+import ContactPage from "./pages/ContactPage/ContactPage";
 import SignInSignUpPage from "./pages/SignInSignUpPage/SignInSignUpPage";
 import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import { Route, Routes } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import PathNameContext from "./context/PathNameContext";
+// import PathNameContext from "./context/PathNameContext";
 import {
   authentication,
   createUserProfileDocument,
@@ -27,7 +27,6 @@ function App({ setUser, setPath }) {
   useEffect(() => {
     unsubscribeFromAuth = authentication.onAuthStateChanged(
       async (userAuth) => {
-        // console.log(userAuth);
         if (userAuth) {
           const userRef = await createUserProfileDocument(userAuth);
           const userSnapshot = await getDoc(userRef).then((snapshot) =>
@@ -35,9 +34,6 @@ function App({ setUser, setPath }) {
           );
           const user = { id: userAuth.uid, ...userSnapshot };
           setUser(user);
-
-          // setCurrentUser(user);
-          // console.log(currentUser);
 
           if (window.location.pathname === "/signIn") {
             navigate("/");
@@ -61,11 +57,10 @@ function App({ setUser, setPath }) {
       <div className="current-page">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/shop" element={<ShopPage />} />
-          {/* <Route path="/contact" element={<ContactPage />} /> */}
+          <Route path="/shop/*" element={<ShopPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/signIn" element={<SignInSignUpPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
-          <Route path="/shop/hats" element={<HatsPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>

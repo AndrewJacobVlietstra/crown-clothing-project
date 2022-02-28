@@ -1,8 +1,6 @@
 import React from "react";
 import "./MenuItem.styles.scss";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import PathNameContext from "../../context/PathNameContext";
 
 const MenuItem = ({ title, imageUrl, size, linkUrl }) => {
   return (
