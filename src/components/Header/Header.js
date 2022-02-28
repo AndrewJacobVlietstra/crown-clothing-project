@@ -30,7 +30,7 @@ const Header = ({ currentUser, cartDropdownHidden, currentPath }) => {
         <Link
           to="/shop"
           className={`${
-            currentPath === "/shop" ? "selected" : ""
+            window.location.pathname.includes("/shop") ? "selected" : ""
           } option`}
         >
           SHOP

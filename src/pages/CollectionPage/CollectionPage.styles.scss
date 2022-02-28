@@ -3,25 +3,45 @@
   flex-direction: column;
 
   .collection-title {
+    display: flex;
+    justify-content: center;
     width: 100%;
-    font-size: 38px;
     margin: 0 auto;
-    margin-bottom: 20px;
-    padding-bottom: 5px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: lowercase;
     border-bottom: 1px solid gray;
+
+    span {
+      cursor: pointer;
+      font-size: 34px;
+      font-weight: normal;
+      margin: 0 2.5rem;
+      padding-bottom: 3px;
+      border-bottom: 1px solid transparent;
+      transition: all .22s;
+      text-transform: uppercase;
+
+      &:hover {
+        border-bottom: 1px solid white;
+      }
+    }
+
+    .selected {
+      border-bottom: 1px solid white;
+    }
   }
 
   .collection-items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 15px;
+    grid-gap: 12px;
     justify-items: center;
 
     & .collection-item {
-      margin-bottom: 30px;
-      width: 85%;
+      margin-bottom: 20px;
+      width: 64%;
     }
   }
 }
