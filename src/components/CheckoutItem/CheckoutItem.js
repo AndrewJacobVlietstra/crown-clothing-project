@@ -6,14 +6,17 @@ import {
   decrementItemQuantityAction,
   addItemToCartAction,
 } from "../../redux/cart/cart.actions";
+import { useNavigate } from "react-router-dom";
 
 const CheckoutItem = ({ item, addItem, decreaseItem, removeItem }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="checkout-item">
       <div className="image-container">
         <img src={item.imageUrl} alt="item" />
       </div>
-      <span className="name">{item.name}</span>
+      <span className="name" onClick={() => navigate(`/shop/products/${item.id}`)}>{item.name}</span>
       <span className="quantity">
         <span className="quantity-button" onClick={() => decreaseItem(item)}>
           &#10094;

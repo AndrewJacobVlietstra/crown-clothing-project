@@ -42,6 +42,15 @@
     padding-left: 4px;
   }
 
+  .name {
+    cursor: pointer;
+    transition: all .22s;
+
+    &:hover {
+      color: #61DAFB;
+    }
+  }
+
   .remove-button {
     padding-left: 12px;
     cursor: pointer;
