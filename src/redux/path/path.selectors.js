@@ -6,3 +6,8 @@ export const currentPathSelector = createSelector(
   [pathSelector],
   path => path.currentPath
 )
+
+export const productIDSelector = createSelector(
+  [currentPathSelector],
+  currentPath => Number(currentPath.split('/products/')[1])
+);

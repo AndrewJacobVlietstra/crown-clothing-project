@@ -45,6 +45,12 @@
       width: 90%;
       margin-bottom: 15px;
       font-size: 20px;
+      transition: all .22s;
+      cursor: pointer;
+
+      &:hover {
+        color: #61DAFB;
+      }
     }
 
     .price {

@@ -1,14 +1,14 @@
 import "./ShopPage.styles.scss";
 import React from "react";
 import { connect } from "react-redux";
-import { currentPathSelector } from "../../redux/path/path.selectors";
 import { collectionsSelector } from "../../redux/shop/shop.selectors";
 import { Routes, Route } from "react-router-dom";
 import CollectionsOverview from "../../components/CollectionsOverview/CollectionsOverview";
 import CollectionPage from "../CollectionPage/CollectionPage";
+import ProductsPage from "../ProductsPage/ProductsPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
 
-const ShopPage = ({ currentPath, collections }) => {
+const ShopPage = ({ collections }) => {
   const [hats, sneakers, jackets, womens, mens] = collections;
   return (
     <div className="shop-page">
@@ -19,6 +19,7 @@ const ShopPage = ({ currentPath, collections }) => {
         <Route path="/jackets" element={<CollectionPage collection={jackets} />} />
         <Route path="/womens" element={<CollectionPage collection={womens} />} />
         <Route path="/mens" element={<CollectionPage collection={mens} />} />
+        <Route path="/products/:id" element={<ProductsPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
@@ -26,7 +27,6 @@ const ShopPage = ({ currentPath, collections }) => {
 };
 
 const mapStateToProps = (state) => ({
-  currentPath: currentPathSelector(state),
   collections: collectionsSelector(state),
 });
 

@@ -2,11 +2,12 @@ import React from "react";
 import "./CollectionPage.styles.scss";
 import CollectionItem from "../../components/CollectionItem/CollectionItem";
 import { useNavigate } from "react-router-dom";
+import { connect } from "react-redux";
+import { currentPathSelector } from "../../redux/path/path.selectors";
 
-const CollectionPage = ({ collection }) => {
+const CollectionPage = ({ collection, currentPath }) => {
   const { items } = collection;
   const navigate = useNavigate();
-  const currentPath = window.location.pathname;
   return (
     <div className="collection-page">
       <h2 className="collection-title">
@@ -54,4 +55,8 @@ const CollectionPage = ({ collection }) => {
   );
 };
 
-export default CollectionPage;
+const mapStateToProps = state => ({
+  currentPath: currentPathSelector(state)
+});
+
+export default connect(mapStateToProps)(CollectionPage);
