@@ -11,7 +11,7 @@ const CollectionItem = ({ item, addItem }) => {
 
   return (
     <div className="collection-item">
-      <div className="image" style={{ backgroundImage: `url(${imageUrl})`}}></div>
+      <div className="image" onClick={() => navigate(`/shop/products/${item.id}`)} style={{ backgroundImage: `url(${imageUrl})`}}></div>
       <div className="collection-footer">
         <span className="name" onClick={() => navigate(`/shop/products/${item.id}`)}>{name}</span>
         <span className="price">{`$${price}`}</span>

@@ -21,8 +21,8 @@ const ProductsPage = ({ allShopItems, allItemsLength, currentProductID, addItem 
 
   return (
     <div className='products-page'>
+      <h1 className='products-display-title'>Product Display</h1>
       <div className='products-display'>
-        <h1 className='products-display-title'>Product Display</h1>
         <ProductDisplay item={itemToDisplay} addItem={addItem} />
       </div>
     </div>

@@ -21,9 +21,15 @@
     height: 95%;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     margin-bottom: 5px;
-    border: 1px solid white;
-    transition: all .25s;
+    border: 1px solid black;
+    transition: all .22s;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid white;
+    }
   }
 
   .custom-button {
