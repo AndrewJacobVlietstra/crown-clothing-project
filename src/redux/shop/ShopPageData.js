@@ -59,7 +59,7 @@ const SHOP_DATA = [
         name: "Blue Snapback",
         imageUrl: "https://i.ibb.co/X2VJP2W/blue-snapback.png",
         price: 16,
-        description: "One size fits most heads, has a plastic adjustable snapback closure. Flat Bill, sexy blue colour, this hat is suitable for custom Embroidery and Printing. You can look cool while sporting your own custom prints."
+        description: "One size fits most heads, has a plastic adjustable snapback closure. Flat Bill, sexy blue colour, and this hat is suitable for custom Embroidery and Printing. You can look cool while sporting your own custom prints."
       },
       {
         id: 9,
