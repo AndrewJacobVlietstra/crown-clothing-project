@@ -1,7 +1,15 @@
 .sign-in {
-  width: 30vw;
+  width: 75vw;
   display: flex;
   flex-direction: column;
+  margin-top: 1.5rem;
+  padding-bottom: 40px;
+  border-bottom: 1px solid white;
+
+  h2,
+  span {
+    text-align: center;
+  }
 
   .title {
     margin: 22px 0;
@@ -10,5 +18,28 @@
   .buttons-container {
     display: flex;
     justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .sign-in {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    border-bottom: none;
+    
+    h2,
+    span {
+      text-align: left;
+    }
+
+    .title {
+      margin: 22px 0;
+    }
+
+    .buttons-container {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
