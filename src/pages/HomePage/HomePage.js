@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 const HomePage = ({ currentUser }) => {
   return (
     <div className="homepage">
-      { currentUser ? <span className="greet-user-title">Welcome, <strong>{currentUser.displayName}</strong> </span> : null }
+      { currentUser ? <h2 className="greet-user-title">Welcome, <strong>{currentUser.displayName}</strong> </h2> : null }
       <Directory />
     </div>
   );

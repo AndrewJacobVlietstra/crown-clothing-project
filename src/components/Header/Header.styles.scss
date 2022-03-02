@@ -16,7 +16,6 @@
     .logo {
       filter: brightness(5);
     }
-
   }
 
   .options {
@@ -32,7 +31,7 @@
       padding: 10px 15px;
       margin: 0 5px 0 5px;
       border-bottom: 1px solid transparent;
-      transition: border-bottom .25s;
+      transition: border-bottom 0.25s;
       cursor: pointer;
 
       &:hover {
@@ -42,6 +41,25 @@
 
     .selected {
       border-bottom: 1px solid white;
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .options {
+      width: 400px;
+      justify-content: center;
+
+      .option {
+        font-size: 18px;
+      }
     }
   }
 }
