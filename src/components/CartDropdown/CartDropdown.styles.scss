@@ -38,3 +38,9 @@
     font-size: 20px
   }
 }
+
+@media screen and (max-width: 881px) {
+  .cart-dropdown {
+    top: 110px;
+  }
+}
