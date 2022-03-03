@@ -11,25 +11,34 @@
   .contact-me-container {
     display: flex;
     align-items: center;
+    background-color: #3b3b3b;
+    border-radius: 6px;
+    padding: 0 14px;
+    width: fit-content;
 
     .contact-me-envelope {
       width: 50px;
       height: 50px;
       fill: #f4f4f4;
-      padding: 12px;
+      padding: 13px;
       border-radius: 8px;
       margin-right: 1rem;
       background-color: #1b1b1b;
     }
 
     .contact-me {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
 
       .contact-me-link {
         color: #61DAFB;
         font-weight: normal;
+        transition: all .2s;
         cursor: pointer;
+
+        &:hover {
+          color: #00c8ff;
+        }
       }
     }
   }
@@ -40,7 +49,7 @@
   .contact-sub-message {
     text-align: center;
   }
-  
+
   .contact-me-container {
     justify-content: center;
   }

@@ -10,12 +10,12 @@ const ContactMessage = () => {
         <br />
         Tell me about yourself.
       </h1>
-      <p className="contact-sub-message">Let's build a project together 💪</p>
+      <p className="contact-sub-message">Let's build a project together 🤟</p>
       <div className="contact-me-container">
         <Envelope className="contact-me-envelope" />
         <p className="contact-me">
           Mail me at <br />
-          <a className="contact-me-link">example@gmail.com</a>
+          <a className="contact-me-link">undefined@crownclothing.com</a>
         </p>
       </div>
     </div>

@@ -11,7 +11,9 @@ const ContactForm = () => {
         <input type='text' placeholder='Subject' className='subject-input'></input>
         <label className='big-message-label' htmlFor='big-message'>Tell us more about yourself *</label>
         <textarea rows='7' id='big-message' required></textarea>
-        <button type='submit' className='contact-form-submit'>Send Message</button>
+        <div className='contact-form-submit-container'>
+          <button type='submit' className='contact-form-submit'>Send Message</button>
+        </div>
       </form>
     </div>
   )
