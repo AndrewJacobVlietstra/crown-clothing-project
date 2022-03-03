@@ -15,7 +15,7 @@ const ContactMessage = () => {
         <Envelope className="contact-me-envelope" />
         <p className="contact-me">
           Mail me at <br />
-          <a className="contact-me-link">undefined@crownclothing.com</a>
+          <a className="contact-me-link">example@crownclothing.com</a>
         </p>
       </div>
     </div>
