@@ -1,5 +1,13 @@
 .contact-page {
+  position: relative;
+  top: 10vh;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 920px) {
+  .contact-page {
+    flex-direction: column;
+  }
 }

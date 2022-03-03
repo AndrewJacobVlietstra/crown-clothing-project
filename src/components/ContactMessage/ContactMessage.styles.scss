@@ -1,0 +1,47 @@
+.contact-message-container {
+
+  .contact-message-title {
+    font-size: 50px;
+  }
+
+  .contact-sub-message {
+    font-size: 22px;
+  }
+
+  .contact-me-container {
+    display: flex;
+    align-items: center;
+
+    .contact-me-envelope {
+      width: 50px;
+      height: 50px;
+      fill: #f4f4f4;
+      padding: 12px;
+      border-radius: 8px;
+      margin-right: 1rem;
+      background-color: #1b1b1b;
+    }
+
+    .contact-me {
+      font-size: 16px;
+      font-weight: bold;
+
+      .contact-me-link {
+        color: #61DAFB;
+        font-weight: normal;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contact-message-title,
+  .contact-sub-message {
+    text-align: center;
+  }
+  
+  .contact-me-container {
+    justify-content: center;
+  }
+}
