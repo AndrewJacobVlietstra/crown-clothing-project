@@ -8,13 +8,13 @@ const ContactMessage = () => {
       <h1 className="contact-message-title">
         Let's chat.
         <br />
-        Tell me about yourself.
+        Tell us about yourself.
       </h1>
       <p className="contact-sub-message">Let's build a project together 🤟</p>
       <div className="contact-me-container">
         <Envelope className="contact-me-envelope" />
         <p className="contact-me">
-          Mail me at <br />
+          Mail us at <br />
           <a className="contact-me-link">example@crownclothing.com</a>
         </p>
       </div>

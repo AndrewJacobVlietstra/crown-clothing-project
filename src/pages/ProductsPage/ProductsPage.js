@@ -14,7 +14,7 @@ const ProductsPage = ({ allShopItems, allItemsLength, currentProductID, addItem 
 
   // Any time the productID changes in the url path run the following code
   useEffect(() => {
-    if (currentProductID > allItemsLength + 1 || currentProductID <= 0) navigate('/error'); // if product ID doesnt exist navigate user to error page
+    if (currentProductID > allItemsLength + 1 || currentProductID <= 0) return navigate('/error'); // if product ID doesnt exist navigate user to error page
     let matchingProduct = allShopItems.find((item) => item.id === currentProductID); // find matching product in array of all shopItems using the ProductID from the url path
     setItemToDisplay({...itemToDisplay, ...matchingProduct}); // return a new object, spread in the previous object, then overwrite it with the new matching object properties
   }, [currentProductID])
