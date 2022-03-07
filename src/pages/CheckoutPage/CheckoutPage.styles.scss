@@ -36,3 +36,19 @@
     font-size: 20px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .checkout-page {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .checkout-page {
+    width: 100%;
+
+    .checkout-header {
+      font-size: 12px;
+    }
+  }
+}

@@ -25,10 +25,25 @@
     .item-button {
       background-color: #333;
       border: none;
-      padding: 2px 5px;
+      padding: 3px 7px;
       color: white;
       user-select: none;
       cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cart-item {
+
+    .item-details {
+
+      .item-button-container {
+        display: flex;
+        justify-content: space-around;
+        width: 55%;
+
+      }
     }
   }
 }
