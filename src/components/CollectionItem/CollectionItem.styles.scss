@@ -63,3 +63,16 @@
     }
   }
 }
+
+@media screen and (max-width: 1366px) {
+  .collection-item {
+    width: 74%;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .collection-item {
+    width: 100%;
+  }
+}

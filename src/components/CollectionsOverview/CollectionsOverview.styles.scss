@@ -12,3 +12,13 @@
     letter-spacing: .75px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .collections-overview {
+    
+  
+    .collection-overview-title {
+      margin-bottom: .75rem;
+    }
+  }
+}

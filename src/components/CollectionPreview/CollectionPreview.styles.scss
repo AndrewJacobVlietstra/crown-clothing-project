@@ -26,3 +26,25 @@
     justify-content: space-between;
   }
 }
+
+@media screen and (max-width: 1366px) {
+  .collection-preview {
+    
+
+    .preview {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .collection-preview {
+    
+
+    .preview {
+      grid-template-columns: 1fr;
+    }
+  }
+}
