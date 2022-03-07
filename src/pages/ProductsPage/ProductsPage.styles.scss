@@ -2,7 +2,7 @@
   position: relative;
   top: 10vh;
   width: 50%;
-  margin: auto;
+  margin: 0 auto;
 
   .products-display {
     display: flex;
@@ -22,13 +22,19 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1366px) {
+  .products-page {
+    width: 90%;
+    
+  }
+}
+
+@media screen and (max-width: 768px) {
   .products-page {
   
     .products-display-title {
-      margin-top: -2.5rem;
+      margin-top: -2.8rem;
   
     }
   }
-  
 }
