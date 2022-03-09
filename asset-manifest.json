@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/crown-clothing-project/static/css/main.affc2426.css",
-    "main.js": "/crown-clothing-project/static/js/main.bbfb8c9d.js",
+    "main.js": "/crown-clothing-project/static/js/main.cf4f0a1c.js",
     "static/media/shopping-bag.svg": "/crown-clothing-project/static/media/shopping-bag.a688874f6f1507316bdfa420328a4a53.svg",
     "static/media/crown.svg": "/crown-clothing-project/static/media/crown.3a4e2b15908e7a4c25343677d232b7e6.svg",
     "index.html": "/crown-clothing-project/index.html",
     "static/media/envelope-solid.svg": "/crown-clothing-project/static/media/envelope-solid.5c1c1b728e1ee5d36dec522469b3186e.svg",
     "main.affc2426.css.map": "/crown-clothing-project/static/css/main.affc2426.css.map",
-    "main.bbfb8c9d.js.map": "/crown-clothing-project/static/js/main.bbfb8c9d.js.map"
+    "main.cf4f0a1c.js.map": "/crown-clothing-project/static/js/main.cf4f0a1c.js.map"
   },
   "entrypoints": [
     "static/css/main.affc2426.css",
-    "static/js/main.bbfb8c9d.js"
+    "static/js/main.cf4f0a1c.js"
   ]
 }
