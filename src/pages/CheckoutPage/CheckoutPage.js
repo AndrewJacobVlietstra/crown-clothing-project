@@ -6,8 +6,10 @@ import {
   cartTotalPriceSelector,
 } from "../../redux/cart/cart.selectors";
 import CheckoutItem from "../../components/CheckoutItem/CheckoutItem";
+import StripeButton from "../../components/StripeButton/StripeButton";
+import { clearCartAction } from "../../redux/cart/cart.actions";
 
-const CheckoutPage = ({ cartItems, totalCartPrice }) => {
+const CheckoutPage = ({ cartItems, totalCartPrice, clearCart }) => {
   return (
     <div className="checkout-page">
       <div className="checkout-header">
@@ -40,6 +42,15 @@ const CheckoutPage = ({ cartItems, totalCartPrice }) => {
       <div className="total">
         <span>{`TOTAL: $${totalCartPrice}`}</span>
       </div>
+
+      <div className="test-container">
+        <div className="test-warning">
+          *Please use the following test credit card for payments*
+          <br />
+          4242 4242 4242 4242 - Exp: 01/26 - CVV: 123
+        </div>
+        <StripeButton price={totalCartPrice} clearCart={clearCart} />
+      </div>
     </div>
   );
 };
@@ -49,4 +60,8 @@ const mapStateToProps = (state) => ({
   totalCartPrice: cartTotalPriceSelector(state),
 });
 
-export default connect(mapStateToProps)(CheckoutPage);
+const mapDispatchToProps = dispatch => ({
+  clearCart: () => dispatch(clearCartAction())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CheckoutPage);
