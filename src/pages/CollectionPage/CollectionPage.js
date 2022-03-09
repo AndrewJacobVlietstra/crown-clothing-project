@@ -24,7 +24,7 @@ const CollectionPage = ({ collection, currentPath }) => {
           jackets
         </span>
         <span
-          className={currentPath.includes("sneakers") ? "selected" : ""}
+          className={currentPath.includes("/sneakers") ? "selected" : ""}
           onClick={() => navigate("/shop/sneakers")}
         >
           sneakers
