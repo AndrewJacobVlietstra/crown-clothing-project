@@ -32,20 +32,28 @@
     // background-color: #222;
   }
 
-  .test-warning {
-    text-align: center;
-    font-size: 22px;
-    margin-top: 30px;
-    color: #fc4141;
-  }
+  .test-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 4rem;
 
-  .StripeCheckout {
-    margin-top: 2rem;
-    margin-left: auto;
+    .test-warning {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 30px;
+      color: #fc4141;
+    }
+  
+    .StripeCheckout {
+      position: absolute;
+      bottom: 2px;
+      right: 0;
+    }
   }
 
   .empty-message {
     font-size: 20px;
+    margin-top: 2rem;
   }
 }
 
