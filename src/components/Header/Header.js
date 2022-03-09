@@ -22,7 +22,7 @@ const Header = ({ currentUser, cartDropdownHidden, currentPath }) => {
         <Link
           to="/"
           className={`${
-            currentPath === "/" ? "selected" : ""
+            currentPath.charAt(currentPath.length - 1) === "/" ? "selected" : ""
           } option`}
         >
           HOME
@@ -30,7 +30,7 @@ const Header = ({ currentUser, cartDropdownHidden, currentPath }) => {
         <Link
           to="/shop"
           className={`${
-            window.location.pathname.includes("/shop") ? "selected" : ""
+            currentPath.includes("/shop") ? "selected" : ""
           } option`}
         >
           SHOP
@@ -38,7 +38,7 @@ const Header = ({ currentUser, cartDropdownHidden, currentPath }) => {
         <Link
           to="/contact"
           className={`${
-            currentPath === "/contact" ? "selected" : ""
+            currentPath.includes("/contact") ? "selected" : ""
           } option`}
         >
           CONTACT
@@ -51,7 +51,7 @@ const Header = ({ currentUser, cartDropdownHidden, currentPath }) => {
           <Link
             to="/signIn"
             className={`${
-              currentPath === "/signIn" ? "selected" : ""
+              currentPath.includes("/signIn") ? "selected" : ""
             } option`}
           >
             SIGN IN
