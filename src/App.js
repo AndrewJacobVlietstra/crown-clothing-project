@@ -35,7 +35,7 @@ function App({ setUser, setPath }) {
           const user = { id: userAuth.uid, ...userSnapshot };
           setUser(user);
 
-          if (window.location.pathname === "/signIn") {
+          if (window.location.pathname.includes("/signIn")) {
             navigate("/");
           }
         }
