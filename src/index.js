@@ -10,7 +10,7 @@ import { store, persistor } from "./redux/store";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
+      <Router basename="/crown-clothing-project">
         <PersistGate persistor={persistor}>
           <App />
         </PersistGate>
