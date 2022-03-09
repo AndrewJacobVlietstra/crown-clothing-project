@@ -12,13 +12,13 @@ const CollectionPage = ({ collection, currentPath }) => {
     <div className="collection-page">
       <h2 className="collection-title">
         <span
-          className={currentPath.includes("hats") ? "selected" : ""}
+          className={currentPath.includes("/hats") ? "selected" : ""}
           onClick={() => navigate("/shop/hats")}
         >
           hats
         </span>
         <span
-          className={currentPath.includes("jackets") ? "selected" : ""}
+          className={currentPath.includes("/jackets") ? "selected" : ""}
           onClick={() => navigate("/shop/jackets")}
         >
           jackets
@@ -30,13 +30,13 @@ const CollectionPage = ({ collection, currentPath }) => {
           sneakers
         </span>
         <span
-          className={currentPath.includes("womens") ? "selected" : ""}
+          className={currentPath.includes("/womens") ? "selected" : ""}
           onClick={() => navigate("/shop/womens")}
         >
           womens
         </span>
         <span
-          className={currentPath.includes("mens") ? "selected" : ""}
+          className={currentPath.includes("/mens") ? "selected" : ""}
           onClick={() => navigate("/shop/mens")}
         >
           mens
